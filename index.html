@@ -5,7 +5,7 @@
 <title>ひよこ育成ゲーム</title>
 <style>
 body { text-align:center; font-family:sans-serif; background:#fffbe6; padding-top:50px;}
-#chick { width:200px; height:200px; margin-top:20px; }
+#chick { width:200px; height:200px; margin-top:20px; object-fit:contain; }
 input, button { font-size:16px; padding:5px 10px; margin-top:10px; }
 </style>
 </head>
@@ -18,7 +18,7 @@ input, button { font-size:16px; padding:5px 10px; margin-top:10px; }
 <br>
 <button onclick="growChick()">育てる</button>
 
-<img id="chick" src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Chick_2.JPG" alt="ひよこ">
+<img id="chick" src="https://place-puppy.com/200x200" alt="ひよこ">
 
 <p id="message"></p>
 
@@ -33,30 +33,30 @@ function growChick(){
     return;
   }
 
-  // 成長段階
+  // 成長段階（ここではプレースホルダー画像）
   if(time < 2){
-    chick.src = "https://upload.wikimedia.org/wikipedia/commons/3/3e/Chick_2.JPG"; // 小さいひよこ
+    chick.src = "https://place-puppy.com/200x200"; // 小さいひよこ
     msg.textContent = "小さいひよこです";
   } else if(time < 5){
-    chick.src = "https://upload.wikimedia.org/wikipedia/commons/f/f7/Chick_1.JPG"; // 少し大きい
+    chick.src = "https://placekitten.com/200/200"; // 少し大きい
     msg.textContent = "ひよこが少し成長しました！";
   } else if(time < 10){
-    chick.src = "https://upload.wikimedia.org/wikipedia/commons/3/32/Chick_3.JPG"; // 中くらい
+    chick.src = "https://placebear.com/200/200"; // 中くらい
     msg.textContent = "ひよこが元気に成長しています！";
   } else if(time < 12){
-    chick.src = "https://upload.wikimedia.org/wikipedia/commons/7/7f/Chicken_in_Rest.JPG"; // 成鶏
+    chick.src = "https://placeimg.com/200/200/animals"; // 成鶏
     msg.textContent = "ついに鶏になりました！";
   } else {
-    chick.src = "https://upload.wikimedia.org/wikipedia/commons/1/1a/Chicken_flying.jpg"; // 飛べる鶏
+    chick.src = "https://placeimg.com/200/200/nature"; // 飛べる鶏
     msg.textContent = "なんと！鶏が飛べるようになりました！🕊️";
   }
 
-  // 1日リセット（テスト用に10秒後）
+  // 1日リセット（10秒後、テスト用）
   setTimeout(() => {
-    chick.src = "https://upload.wikimedia.org/wikipedia/commons/3/3e/Chick_2.JPG";
+    chick.src = "https://place-puppy.com/200x200";
     msg.textContent = "新しい日が始まりました。ひよこはリセットされました";
     document.getElementById('studyTime').value = "";
-  }, 10000); // 10秒後にリセット
+  }, 10000);
 }
 </script>
 
